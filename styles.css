@@ -3,7 +3,8 @@ h1 {
     font-family: 'Lexend';
 }
 body {
-    background-color:pink;
+    background-color: pink;
+    font-family: 'Courier New';
 }
 p {
     color: red;
