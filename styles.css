@@ -1,6 +1,7 @@
 h1 {
     color: blue;
-    font-family: "Comic Sans";
+    font-family: "ENGR";
+    font-size: 40;
 }
 body {
     padding-top: 0.75em;
@@ -8,6 +9,7 @@ body {
     min-width: 920px;
     margin: 10, auto;
     font-family: "ENGR";
+    font-size: 40;
 }
 p {
     color: red;
