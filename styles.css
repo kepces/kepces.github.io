@@ -1,15 +1,21 @@
+
 h1 {
     color: blue;
     font-family: "ENGR";
-    font-size: 40;
+    font-size: 70px;
+}
+h2 {
+    color: blue;
+    font-family: "ENGR";
+    font-size: 40px;
 }
 body {
     padding-top: 0.75em;
     max-width: 1200px;
     min-width: 920px;
-    margin: 10, auto;
+    margin: 10px;
     font-family: "ENGR";
-    font-size: 40;
+    font-size: 40px;
 }
 p {
     color: red;
