@@ -1,0 +1,10 @@
+.flexbox-container {
+	display: flex;
+	border-width: 5px;
+	border-color: orange;
+}
+
+.flexbox-header {
+	border-width: 10px;
+	border-color: purple;
+}

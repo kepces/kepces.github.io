@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trivia!</title>
+  </head>
+  <body>
+      
+    <div class="header">
+      <h1>Trivia!</h1>
+    </div>
+    <div class="container">
+      <div class="section">
+        <h2>Part 1: Multiple Choice </h2>
+		<hr>
+        <h3 id="question"> What is my favourite pet? </h3>
+        <div class="answer">
+          <button type="button" id="correct"> Bunnies </button>
+          <button type="button" id="incorrect"> Dogs! </button>
+          <button type="button" id="incorrect"> Cats! </button>
+          <button type="button" id="incorrect"> Parakeets </button>
+        </div>
+		 <p id="textBox"></p>
+      </div>
+
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr>
+		<h3 id="question"> What is 0xFF in decimal? </h3>
+        <!-- TODO: Add free response question here -->
+		<div class="input-group mb-3">
+		<input id="input-form" type="text" class="form-control" placeholder="Answer"></input>
+		<button class="btn btn-outline-secondary" type="button" onclick="submitAnswer()">Submit</button>
+		<p id="textBox2"></p>
+		</div>
+
+			
+		 </div>
+      </div>
+    </div>
+  </body>
+    <script>
+        // TODO: Add code to check answers to questions
+        // Source https://stackoverflow.com/a/56276272
+		// For question 1
+        function btnClickEventHandler(color, btn) {
+          return function changeBgColorOnEvent(event) {
+            btn.style.backgroundColor = color;
+            if (color == 'green') {
+					textBox.innerHTML = "Correct!"
+					incorrect_answer.forEach(btn => btn.disabled = true)
+			}
+			else if (color == 'red') {
+					textBox.innerHTML = "Incorrect"
+			}
+          }
+        }
+        let correct_answer = document.querySelector('#correct');
+        let incorrect_answer = document.querySelectorAll('#incorrect');
+		let textBox = document.querySelector('#textBox');
+        correct_answer.addEventListener('click', btnClickEventHandler('green', correct_answer));
+        incorrect_answer.forEach(btn => {
+          btn.addEventListener('click', btnClickEventHandler('red', btn))
+        });
+		
+		// For question 2
+		function submitAnswer () {
+			let input = document.querySelector('#input-form');
+			let textBox2 = document.querySelector('#textBox2')
+			if (input.value == "255")
+			{
+				textBox.innerHTML = "Correct!"
+			}
+			else
+			{
+				textBox.innerHTML = "Incorrect"
+			}
+		}
+		
+      </script>
+</html>
